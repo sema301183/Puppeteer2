@@ -1,18 +1,7 @@
+### Node ###
 node_modules/
-user.js
-/playwright-report/
-/coverage/
 
-
+### VS Code ###
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
 
-# Local History for Visual Studio Code
-.history/
-/test-results/
-/playwright-report/
-/playwright/.cache/
+package-lock.json
