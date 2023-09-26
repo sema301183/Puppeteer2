@@ -1,25 +1,21 @@
 {
-  "name": "hw5puppeteer2",
+  "name": "puppeteer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tests with puppeteer",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "cucumber": "cucumber-js"
   },
   "keywords": [
-    "test",
-    "puppeteer",
-    "cucumber"
+    "Puppeteer"
   ],
-  "author": "dmitrieva",
+  "author": "BenderKate",
   "license": "ISC",
-  "devDependencies": {
-    "@cucumber/cucumber": "^8.10.0",
-    "chai": "^4.3.8",
-    "cucumber": "^6.0.7",
-    "jest": "^29.3.1",
-    "jest-puppeteer": "^6.2.0",
-    "puppeteer": "^19.5.1"
+  "dependencies": {
+    "chai": "^4.3.6",
+    "cucumber": "^7.0.0-rc.0",
+    "jest": "^27.5.1",
+    "jest-puppeteer": "^6.1.0"
   }
 }

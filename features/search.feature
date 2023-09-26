@@ -1,38 +1,29 @@
-Feature: Booking ticket- Tests
+Feature: Tests for tickets
 
-    Scenario: Positive - Should book one seat
-        Given user is on start page "http://qamid.tmweb.ru/client/index.php"
-        When user chooses day "7" of the week
-        When user chooses movie "2" and time "2"
-        When user chooses seat "10" and "10"
-        When user click on button 'Забронировать'
-        When user click on button 'Получить код бронирования'
-        Then user can see QR code
-        Then user sees the header 'Электронный билет'
+    Feature Description
+    Scenario: Should book available ticket
+        Given user is on page "http://qamid.tmweb.ru/client/index.php"
+        When user choose date
+        When user choose time of a movie
+        When user choose a sit
+        When user click on the booking button
+        When user click on the button to get booking code
+        Then user get the code and text "Электронный билет"
 
-    Scenario: Positive - Should book VIP seat
-        Given user is on start page "http://qamid.tmweb.ru/client/index.php"
-        When user chooses day "7" of the week
-        When user chooses movie "2" and time "2"
-        When user chooses Vip seat "3"
-        When user click on button 'Забронировать'
-        When user click on button 'Получить код бронирования'
-        Then user can see QR code
-        Then user sees the header 'Электронный билет'
+    Scenario: Should book some available tickets
+        Given user is on page "http://qamid.tmweb.ru/client/index.php"
+        When user choose date
+        When user choose time of a movie
+        When user choose a first sit
+        When user choose a second sit
+        When user click on the booking button
+        When user click on the button to get booking code
+        Then user get the code and text "Электронный билет"
 
-    Scenario: Positive - Should book one seat
-        Given user is on start page "http://qamid.tmweb.ru/client/index.php"
-        When user chooses day "7" of the week
-        When user chooses movie "2" and time "2"
-        When user chooses seat "9" and "1"
-        When user chooses seat "9" and "2"
-        When user click on button 'Забронировать'
-        When user click on button 'Получить код бронирования'
-        Then user can see QR code
-        Then user sees the header 'Электронный билет'
-
-    Scenario: Negative - Should not book any seats
-        Given user is on start page "http://qamid.tmweb.ru/client/index.php"
-        When user chooses day "7" of the week
-        When user chooses movie "2" and time "2"
-        Then button 'Забронировать' not active
+    Scenario: Should try to book unavailable ticket, but unsuccessfully
+        Given user is on page "http://qamid.tmweb.ru/client/index.php"
+        When user choose date that has been choosen earlier
+        When user choose time of a movie that has been choosen earlier
+        When user choose a sit that has been choosen earlier
+        When user click on the booking button
+        Then button for booking is inactive "true"
